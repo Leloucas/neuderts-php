@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="portfolio-detail">
+      <div class="portfolio">
+        <h1 class="portfolio-title">{{ vm.portfolio.title }}</h1>
+        <p class="portfolio-subtitle">{{ vm.portfolio.subtitle }} <span>Creado el {{ vm.portfolio.date }}</span></p>
+        <hr>
+        <div class="row">
+          <div class="col-md-12 col-sm-8">
+            <img ng-src="assets/img/portfolio/{{ vm.portfolio.img }}" title="{{ vm.portfolio.subtitle }}" class="img-responsive portfolio-img"/>
+          </div>
+        </div>
+        <hr>
+        <div class="portfolio-body" ng-bind-html="vm.portfolio.body"></div>
+      </div>
+    </div>
+  </div>
+</div>

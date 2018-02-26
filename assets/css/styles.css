@@ -1,0 +1,189 @@
+body{
+  font-family: Helvetica;
+  color: #000 !important;
+  margin-top: 60px;
+}
+a{
+  color: #000 !important;
+}
+a:hover{
+  color: #ffa7b6 !important;
+  text-decoration: none !important;
+}
+nav .navbar-brand{
+  width: 10%;
+}
+nav .navbar-brand img{
+  max-width: 180px;
+}
+.navbar-nav > li{
+  font-size: 11px;
+}
+.navbar-default .navbar-nav > li > a{
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+}
+.container{
+  max-width: 70%;
+}
+@media(max-width: 768px){
+  .container{
+    max-width: 90%;
+  }
+}
+.footer{
+  border-top: 1px solid #e7e7e7;
+  padding: 14px 0;
+  line-height: 25px;
+  position: absolute;
+  width: 100%;
+  font-weight: bold;
+  background-color: #fff;
+}
+.footer-contacto{
+  font-weight: normal;
+  font-size: 12px;
+}
+.footer .text{
+  color: #000;
+  margin: 20px 0;
+}
+.item-container{
+  position: relative;
+  padding-top: 100%;
+  background-color: #000;
+}
+.item{
+  position: absolute;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.item-caption{
+  width: 100%;
+  background-color: #fafafa;
+  color: #000;
+  padding: 2px 8px;
+  height: 100px;
+  margin-bottom: 10%;
+}
+#portfolioItem {
+  text-align: center;
+  color: #000;
+  margin: 40px 0;
+}
+#portfolioItem img{
+  margin: 0 auto;
+  width: 60%;
+}
+#portfolioItem iframe{
+  width: 100%;
+}
+textarea{
+  resize: vertical;
+}
+.btn-custom{
+  background-color: #333;
+  border-color: #000;
+  color: #fff;
+  font-weight: bold !important;
+  margin-bottom: 20px !important;
+}
+.btn-custom:hover, .btn-custom:focus{
+  background-color: #111;
+  color: #fff !important;
+}
+.post-preview > a {
+  color: #212529;
+}
+.nuestro-blog, .post-preview > a > .blog-title, .admin-title {
+  font-size: 25px;
+  margin-top: 30px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.nuestro-blog, .contacto-title{
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: inherit;
+}
+.post-preview > a > .blog-subtitle ,  h3.blog-subtitle {
+  font-size: 12px;
+  font-weight: 300;
+  margin: 0 0 10px;
+  color: #212529 !important;
+}
+h3.blog-subtitle a {
+  color: #4A505C !important;
+}
+.post-preview > a > .blog-thumb {
+  max-width: 60px;
+  margin: 10px 1em;
+  float: left;
+}
+.post-preview > .blog-meta, .blog-meta {
+  font-size: 11px;
+  font-style: italic;
+  margin-top: 0;
+  color: #868e96 !important;
+}
+.article-title, .portfolio-title{
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  margin-top: 1.5rem !important;
+}
+.article-subtitle, .portfolio-subtitle{
+  font-style: italic;
+  color: #868e96;
+  color: #222;
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.article-subtitle>span, .portfolio-subtitle>span{
+  color: #868e96;
+  font-size: 12px;
+}
+.article-body, .portfolio-body{
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.article-img, .portfolio-img{
+  margin: 0 auto;
+}
+.form-control:focus{
+  box-shadow: none;
+  border-color: #aaa;
+}
+#portfolioTable>tbody a, #blogTable>tbody a{
+  color: #ff4565 !important;
+}
+#portfolioTable>tbody a:hover, #blogTable>tbody a:hover{
+  color: #ffa7b6 !important;
+}
+/* @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+body{
+    background-color: #0f121f;
+    background-repeat-y: no-repeat;
+    color: #fff;
+}
+
+body *{
+    font-family: Ubuntu;
+}
+
+h1, h2, h3, h4, h5{
+    font-weight: normal;
+    margin: 0;
+}
+
+a, a:hover, a:visited{
+    color: #bbb;
+    text-decoration: none;
+} */

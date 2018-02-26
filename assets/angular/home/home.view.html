@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-4 col-sm-4 col-xs-4" ng-repeat="portfolio in vm.portfolios ">
+    <div class="item-container">
+      <a ng-href="#!/portfolio/{{ portfolio.slug }}">
+        <img ng-src="assets/img/portfolio/{{ portfolio.img }}" alt="{{ portfolio.title }}" title="{{ portfolio.title }}" class="img-responsive item"/>
+      </a>
+    </div>
+    <div class="item-caption" title="Creado el {{ portfolio.date|date:"D d M Y" }}">
+      <h2><a ng-href="#!/portfolio/{{ portfolio.slug }}">{{ portfolio.title }}</a></h2>
+      <p>
+        <span >{{ portfolio.subtitle }}</span>
+      </p>
+    </div>
+  </div>
+</div>

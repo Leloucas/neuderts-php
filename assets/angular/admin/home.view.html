@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2 class="admin-title text-center">Administración</h2>
+    <hr>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Portfolio</h3>
+        <div class="table-controller">
+          <table class="table table-condensed" id="portfolioTable">
+            <thead>
+              <th>Titulo</th>
+              <th title="URL personalizada">Slug</th>
+              <th>Subtitulo</th>
+              <th>Fecha de creación</th>
+              <th class="text-center">Activo</th>
+            </thead>
+            <tbody>
+              <tr ng-repeat="portfolio in vm.portfolios">
+                <td><a ng-href="#!/admin/portfolio/{{portfolio.id}}">{{portfolio.title}}</a></td>
+                <td><a ng-href="#!/admin/portfolio/{{portfolio.id}}">{{portfolio.slug}}</a></td>
+                <td>{{portfolio.subtitle}}</td>
+                <td>{{portfolio.date}}</td>
+                <td class="text-center">
+                  <span ng-show="portfolio.active == 1" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                  <span ng-show="portfolio.active == 0" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Blogs</h3>
+        <div class="table-controller">
+          <table class="table table-condensed" id="blogTable">
+            <thead>
+              <th>Titulo</th>
+              <th title="URL personalizada">Slug</th>
+              <th>Subtitulo</th>
+              <th>Fecha de creación</th>
+              <th class="text-center">Activo</th>
+            </thead>
+            <tbody>
+              <tr ng-repeat="blog in vm.blogs">
+                <td><a ng-href="#!/admin/blog/{{blog.id}}">{{blog.title}}</a></td>
+                <td><a ng-href="#!/admin/blog/{{blog.id}}">{{blog.slug}}</a></td>
+                <td>{{blog.subtitle}}</td>
+                <td>{{blog.date}}</td>
+                <td class="text-center">
+                  <span ng-show="blog.active == 1" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                  <span ng-show="blog.active == 0" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

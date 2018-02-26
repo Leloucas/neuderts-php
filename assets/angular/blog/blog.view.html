@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-lg-8 col-lg-offset-2 col-md-10  col-md-offset-1">
+    <div class="post-preview" ng-repeat="article in vm.articles">
+      <a ng-href="#!/blog/{{ article.slug }}">
+        <img ng-src="assets/img/blog/{{ article.img }}" alt="{{ article.title }}" title="{{ article.title }}" class="img-responsive blog-thumb"/>
+        <h2 class="blog-title">{{ article.title }}</h2>
+        <h3 class="blog-subtitle">{{ article.subtitle }}</h3>
+      </a>
+      <p class="blog-meta">Creado el {{ article.date }}</p>
+      <hr>
+    </div>
+  </div>
+</div>
