@@ -167,6 +167,33 @@ h3.blog-subtitle a {
 #portfolioTable>tbody a:hover, #blogTable>tbody a:hover{
   color: #ffa7b6 !important;
 }
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.inputfile + label {
+	/* width: 100%; */
+	font-size: 1em;
+	font-weight: bold;
+	color: #fff;
+	background-color: #222;
+	display: inline-block;
+	cursor: pointer;
+  text-align: center !important;
+	margin-bottom: 2%;
+	padding: 2% 5%;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+	color: #fff;
+	background-color: #ff4565;
+}
 /* @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 body{
     background-color: #0f121f;

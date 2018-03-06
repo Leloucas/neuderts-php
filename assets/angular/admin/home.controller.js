@@ -27,6 +27,9 @@ function adminCtrl($location, neuData){
     }
   }).catch(function(error){
     console.log(error);
+  }).finally(function(){
+    console.log("ya se cargó");
+    vm.loading = false;
   });
 
 

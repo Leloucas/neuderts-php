@@ -15,6 +15,8 @@ function homeCtrl($location, neuData){
     }
   }).catch(function(error){
     console.log(error);
+  }).finally(function(){
+    vm.loading = false;
   });
 
 

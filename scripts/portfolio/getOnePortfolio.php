@@ -5,8 +5,13 @@
     echo 'PDO unavailable';
     return 0;
   }
+  $where = '';
   if(isset($_GET['slug']) && $_GET['slug']){
     $slug = preg_replace('/[^-a-zA-Z0-9_]/', '', $_GET['slug']);
+    $where = "WHERE slug = '$slug' AND active = 1";
+  } elseif (isset($_GET['id']) && $_GET['id']) {
+    $id = preg_replace('/[^-a-zA-Z0-9_]/', '', $_GET['id']);
+    $where = "WHERE id = $id";
   } else {
     echo 500;
     return 0;
@@ -23,8 +28,8 @@
   }
 
   if($dbh){
-    $sql = "SELECT * FROM portfolio WHERE slug = '$slug'";
-
+    $sql = "SELECT * FROM portfolio $where";
+    
     $stmt = $dbh->prepare($sql);
     // Especificamos el fetch mode antes de llamar a fetch()
     $stmt->setFetchMode(PDO::FETCH_ASSOC);

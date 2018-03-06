@@ -3,15 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" type="image/png" href="assets/img/neuderts-favicon.png"/>
 
 
     <title>Neuderts</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/summernote.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 
-    <script src="assets/angular/angular.min.js" charset="utf-8"></script>
+
     <script src="assets/js/jquery-3.2.1.min.js" charset="utf-8"></script>
     <script src="assets/js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="assets/js/fontawesome-all.min.js" charset="utf-8"></script>
+    <script src="assets/angular/angular.min.js" charset="utf-8"></script>
+    <script src="assets/js/summernote.min.js" charset="utf-8"></script>
+
   </head>
   <body>
     <!-- nav -->
@@ -63,15 +69,23 @@
       </div>
     </footer>
 
-      <script src="assets/angular/angular-route.min.js" charset="utf-8"></script>
-      <script src="assets/angular/main.js" charset="utf-8"></script>
-      <script src="assets/angular/services/data.services.js" charset="utf-8"></script>
-      <script src="assets/angular/home/home.controller.js" charset="utf-8"></script>
-      <script src="assets/angular/blog/blog.controller.js" charset="utf-8"></script>
-      <script src="assets/angular/post/post.controller.js" charset="utf-8"></script>
-      <script src="assets/angular/blog/blog-new.controller.js" charset="utf-8"></script>
-      <script src="assets/angular/contacto/contacto.controller.js" charset="utf-8"></script>
-      <script src="assets/angular/portfolio/portfolio.controller.js" charset="utf-8"></script>
-      <script src="assets/angular/admin/home.controller.js" charset="utf-8"></script>
+    <script src="assets/angular/angular-route.min.js" charset="utf-8"></script>
+    <script src="assets/angular/main.js" charset="utf-8"></script>
+    <script src="assets/angular/services/data.services.js" charset="utf-8"></script>
+    <script src="assets/angular/home/home.controller.js" charset="utf-8"></script>
+    <script src="assets/angular/blog/blog.controller.js" charset="utf-8"></script>
+    <script src="assets/angular/post/post.controller.js" charset="utf-8"></script>
+    <script src="assets/angular/blog/blog-new.controller.js" charset="utf-8"></script>
+    <script src="assets/angular/contacto/contacto.controller.js" charset="utf-8"></script>
+    <script src="assets/angular/portfolio/portfolio.controller.js" charset="utf-8"></script>
+    <script src="assets/angular/admin/home.controller.js" charset="utf-8"></script>
+    <script src="assets/angular/admin/blog/editBlog.controller.js" charset="utf-8"></script>
+    <script src="assets/angular/admin/blog/newBlog.controller.js" charset="utf-8"></script>
+    <script src="assets/angular/admin/portfolio/editPortfolio.controller.js" charset="utf-8"></script>
+    <script src="assets/angular/admin/portfolio/newPortfolio.controller.js" charset="utf-8"></script>>
+
+    <script src="assets/js/angular-summernote.min.js" charset="utf-8"></script>
+    <script src="assets/js/ng-file-upload-shim.min.js" charset="utf-8"></script>
+    <script src="assets/js/ng-file-upload-all.min.js" charset="utf-8"></script>
   </body>
 </html>

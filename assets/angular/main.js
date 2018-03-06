@@ -1,6 +1,6 @@
-angular.module('neuderts', ['ngRoute']);
+angular.module('neuderts', ['ngRoute', 'summernote', 'ngFileUpload']);
 
-function config($routeProvider, $locationProvider, $qProvider){
+function config($routeProvider, $locationProvider, $qProvider, $provide){
 
   $routeProvider
     .when('/', {
@@ -23,11 +23,6 @@ function config($routeProvider, $locationProvider, $qProvider){
       controller: 'postCtrl',
       controllerAs: 'vm'
     })
-    .when('/blog/nuevo', {
-      templateUrl: 'assets/angular/blog/blog-new.view.html',
-      controller: 'blogNewCtrl',
-      controllerAs: 'vm'
-    })
     .when('/portfolio/:slug', {
       templateUrl: 'assets/angular/portfolio/portfolio.view.html',
       controller: 'portfolioCtrl',
@@ -37,6 +32,26 @@ function config($routeProvider, $locationProvider, $qProvider){
       templateUrl: 'assets/angular/admin/home.view.html',
       controller: 'adminCtrl',
       controllerAs: 'vm'
+    })
+    .when('/admin/blog/:id', {
+      templateUrl : 'assets/angular/admin/blog/blog.view.html',
+      controller : 'editBlogCtrl',
+      controllerAs : 'vm'
+    })
+    .when('/admin/blog/new', {
+      templateUrl : 'assets/angular/admin/blog/blog.view.html',
+      controller : 'newBlogCtrl',
+      controllerAs : 'vm'
+    })
+    .when('/admin/portfolio/:id', {
+      templateUrl : 'assets/angular/admin/portfolio/portfolio.view.html',
+      controller : 'editPortCtrl',
+      controllerAs : 'vm'
+    })
+    .when('/admin/portfolio/new', {
+      templateUrl : 'assets/angular/admin/portfolio/portfolio.view.html',
+      controller : 'newPortCtrl',
+      controllerAs : 'vm'
     })
     .otherwise({redirectTo: '/'});
 

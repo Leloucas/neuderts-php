@@ -1,8 +1,8 @@
 angular.module('neuderts').service('neuData', neuData);
 
-neuData.$inject = ['$http', '$window'];
+neuData.$inject = ['$http', '$window', 'Upload'];
 
-function neuData($http, $window){
+function neuData($http, $window, Upload){
   function getAllPortfolio(){
     return $http.get('/neuderts/scripts/portfolio/getAllPortfolio.php').then(complete).catch(failed);
   }
@@ -11,12 +11,35 @@ function neuData($http, $window){
     return $http.get('/neuderts/scripts/portfolio/getOnePortfolio.php?slug='+slug).then(complete).catch(failed);
   }
 
+  function getPortfolioAdmin(id){
+    return $http.get('/neuderts/scripts/portfolio/getOnePortfolio.php?id='+id).then(complete).catch(failed);
+  }
+
   function getAllBlog(){
     return $http.get('/neuderts/scripts/blog/getAllBlog.php').then(complete).catch(failed);
   }
 
   function getOneBlog(slug){
     return $http.get('/neuderts/scripts/blog/getOneBlog.php?slug='+slug).then(complete).catch(failed);
+  }
+
+  function getBlogAdmin(id){
+    return $http.get('/neuderts/scripts/blog/getOneBlog.php?id='+id).then(complete).catch(failed);
+  }
+
+  function updatePortfolio(data, img){
+
+    var req = {
+      url: '/neuderts/scripts/portfolio/updateOnePortfolio.php',
+      method: 'POST',
+      file: img,
+      data: {
+        portfolio: data,
+        targetPath: 'neuderts/public/assets/img/portfolio/'
+      }
+    };
+
+    return Upload.upload(req).then(complete).catch(failed);
   }
 
   function complete(response){
@@ -30,7 +53,10 @@ function neuData($http, $window){
   return {
     getAllPortfolio : getAllPortfolio,
     getOnePortfolio : getOnePortfolio,
+    getPortfolioAdmin : getPortfolioAdmin,
     getAllBlog : getAllBlog,
-    getOneBlog : getOneBlog
+    getOneBlog : getOneBlog,
+    getBlogAdmin : getBlogAdmin,
+    updatePortfolio : updatePortfolio
   }
 }
