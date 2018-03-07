@@ -15,40 +15,39 @@
     try {
         $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8";
         $dbh = new PDO($dsn, $username, $pass);
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (PDOException $e){
         echo json_encode($e->getMessage());
         return 0;
     }
 
     if($dbh){
-      $sql = "UPDATE portfolio SET title = :title, slug = :slug, subtitle = :subtitle, body = :body";
+      $sql = "INSERT INTO portfolio (title, slug, subtitle, body";
+      $sql2 = ") VALUES (:title, :slug, :subtitle, :body";
 
-      $id = $data['portfolio']['id'];
       $title = $data['portfolio']['title'];
       $slug = $data['portfolio']['slug'];
       $subtitle = $data['portfolio']['subtitle'];
       $body = $data['portfolio']['body'];
-      $id = $data['portfolio']['id'];
       $vars = array(
-        'id' => $id,
         'title' => $title,
         'slug' => $slug,
         'subtitle' => $subtitle,
         'body' => $body,
       );
       if($filename !== ''){
-        // $sql .= ", img = '$filename'";
-        $sql .= ", img = :img";
+        $sql .= ", img";
+        $sql2 .= ", :img";
         $vars['img'] = $filename;
       }
 
-      $sql .=  " WHERE id = :id";
-      $stmt = $dbh->prepare($sql);
+      $sql2 .=  ")";
+      $statement = $sql.$sql2;
+      $stmt = $dbh->prepare($statement);
       $stmt->execute($vars);
 
-      // $port = $stmt->fetch(PDO::FETCH_ASSOC);
 
-      echo json_encode(array('status' => 201, 'message' => 'Editado correctamente'));
+      echo json_encode(array('status' => 201, 'message' => 'Guardado correctamente'));
 
     } else {
       echo json_encode(array('status' => 500, 'message' => 'Error en el servidor'));

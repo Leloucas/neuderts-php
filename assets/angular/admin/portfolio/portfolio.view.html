@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-12">
-    <h2 class="text-center">Editar Portfolio</h2>
+    <h2 class="text-center">{{ vm.header }}</h2>
     <hr>
     <form ng-submit="vm.submitForm()" class="form-horizontal">
       <div class="form-group">
@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-sm-2" for="body">Título:</label>
+        <label class="control-label col-sm-2" for="body">Cuerpo:</label>
         <div class="col-sm-10 col-md-10">
           <!-- <textarea class="form-control" name="body" id="body" ng-model="vm.portfolio.body"></textarea> -->
           <summernote ng-model="vm.portfolio.body" config="vm.options"></summernote>
@@ -33,14 +33,12 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-sm-2" for="img">Imagen:</label>
+        <label class="control-label col-sm-2" for="img">Actualizar imagen:</label>
+        <small>{{vm.message}}</small>
         <input type="file" ngf-select name="img" id="img" ng-model="vm.imagen" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="2MB" class="file inputfile">
-        <label class="control-label text-center col-sm-10" for="img"><i class="fa fa-upload" aria-hidden="true"></i> <span class="smaller-text">{{vm.imagen.name || 'Seleccionar (tamaño máximo 2MB)'}}</span></label>
-
-      </div>
-      <div class="form-group">
-        <label class="control-label col-sm-2" for="active">Activo:</label>
-        <input type="checkbox" name="active" id="active" ng-model="vm.portfolio.active" ng-checked="vm.portfolio.checked == 1">
+        <label class="control-label text-center col-sm-10" for="img"><i class="fa fa-upload" aria-hidden="true"></i>
+          <span class="smaller-text">{{vm.imagen.name || 'Seleccionar (tamaño máximo 2MB)'}}</span>
+        </label>
       </div>
       <button type="submit" class="btn btn-custom pull-right">Actualizar</button>
     </form>

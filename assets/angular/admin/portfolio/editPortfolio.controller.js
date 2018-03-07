@@ -7,6 +7,9 @@ function editPortCtrl($location, neuData, $routeParams, $sce, $window){
 
   var id = $routeParams.id;
 
+  vm.header = 'Editar Portfolio';
+  vm.message = '(Dejar en blanco si se desea conservar imagen actual)';
+
   vm.portfolio = {};
 
   vm.options = {
@@ -38,7 +41,14 @@ function editPortCtrl($location, neuData, $routeParams, $sce, $window){
 
     neuData.updatePortfolio(vm.portfolio, vm.imagen)
       .then(function(data){
-        console.log(data);
+        if(data.data.status === 201){
+          alert(data.data.message);
+          $window.history.back();
+        } else if(data.data.status === 500) {
+          alert(data.data.message);
+        } else if(data.data.status === 404) {
+          alert(data.data.message);
+        }
       })
       .catch(function(error){
         console.log(error);

@@ -27,6 +27,36 @@ function neuData($http, $window, Upload){
     return $http.get('/neuderts/scripts/blog/getOneBlog.php?id='+id).then(complete).catch(failed);
   }
 
+  function savePortfolio(data, img){
+
+    var req = {
+      url: '/neuderts/scripts/portfolio/saveNewPortfolio.php',
+      method: 'POST',
+      file: img,
+      data: {
+        portfolio: data,
+        targetPath: 'neuderts/public/assets/img/portfolio/'
+      }
+    };
+
+    return Upload.upload(req).then(complete).catch(failed);
+  }
+
+  function saveBlog(data, img){
+
+    var req = {
+      url: '/neuderts/scripts/blog/saveNewBlog.php',
+      method: 'POST',
+      file: img,
+      data: {
+        blog: data,
+        targetPath: 'neuderts/public/assets/img/blog/'
+      }
+    };
+
+    return Upload.upload(req).then(complete).catch(failed);
+  }
+
   function updatePortfolio(data, img){
 
     var req = {
@@ -36,6 +66,21 @@ function neuData($http, $window, Upload){
       data: {
         portfolio: data,
         targetPath: 'neuderts/public/assets/img/portfolio/'
+      }
+    };
+
+    return Upload.upload(req).then(complete).catch(failed);
+  }
+
+  function updateBlog(data, img){
+
+    var req = {
+      url: '/neuderts/scripts/blog/updateOneBlog.php',
+      method: 'POST',
+      file: img,
+      data: {
+        blog: data,
+        targetPath: 'neuderts/public/assets/img/blog/'
       }
     };
 
@@ -57,6 +102,9 @@ function neuData($http, $window, Upload){
     getAllBlog : getAllBlog,
     getOneBlog : getOneBlog,
     getBlogAdmin : getBlogAdmin,
-    updatePortfolio : updatePortfolio
+    savePortfolio : savePortfolio,
+    saveBlog : saveBlog,
+    updatePortfolio : updatePortfolio,
+    updateBlog : updateBlog
   }
 }

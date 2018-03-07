@@ -33,24 +33,24 @@ function config($routeProvider, $locationProvider, $qProvider, $provide){
       controller: 'adminCtrl',
       controllerAs: 'vm'
     })
-    .when('/admin/blog/:id', {
-      templateUrl : 'assets/angular/admin/blog/blog.view.html',
-      controller : 'editBlogCtrl',
-      controllerAs : 'vm'
-    })
     .when('/admin/blog/new', {
       templateUrl : 'assets/angular/admin/blog/blog.view.html',
       controller : 'newBlogCtrl',
       controllerAs : 'vm'
     })
-    .when('/admin/portfolio/:id', {
-      templateUrl : 'assets/angular/admin/portfolio/portfolio.view.html',
-      controller : 'editPortCtrl',
+    .when('/admin/blog/:id', {
+      templateUrl : 'assets/angular/admin/blog/blog.view.html',
+      controller : 'editBlogCtrl',
       controllerAs : 'vm'
     })
     .when('/admin/portfolio/new', {
       templateUrl : 'assets/angular/admin/portfolio/portfolio.view.html',
       controller : 'newPortCtrl',
+      controllerAs : 'vm'
+    })
+    .when('/admin/portfolio/:id', {
+      templateUrl : 'assets/angular/admin/portfolio/portfolio.view.html',
+      controller : 'editPortCtrl',
       controllerAs : 'vm'
     })
     .otherwise({redirectTo: '/'});

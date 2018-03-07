@@ -32,6 +32,9 @@ nav .navbar-brand img{
     max-width: 90%;
   }
 }
+.modal-body {
+    margin: 0 25px;
+}
 .footer{
   border-top: 1px solid #e7e7e7;
   padding: 14px 0;
@@ -193,6 +196,9 @@ h3.blog-subtitle a {
 .inputfile + label:hover {
 	color: #fff;
 	background-color: #ff4565;
+}
+.btn-success a {
+  color: #fff !important;
 }
 /* @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 body{

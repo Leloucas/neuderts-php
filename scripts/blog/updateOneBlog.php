@@ -21,14 +21,14 @@
     }
 
     if($dbh){
-      $sql = "UPDATE portfolio SET title = :title, slug = :slug, subtitle = :subtitle, body = :body";
+      $sql = "UPDATE blog SET title = :title, slug = :slug, subtitle = :subtitle, body = :body";
 
-      $id = $data['portfolio']['id'];
-      $title = $data['portfolio']['title'];
-      $slug = $data['portfolio']['slug'];
-      $subtitle = $data['portfolio']['subtitle'];
-      $body = $data['portfolio']['body'];
-      $id = $data['portfolio']['id'];
+      $id = $data['blog']['id'];
+      $title = $data['blog']['title'];
+      $slug = $data['blog']['slug'];
+      $subtitle = $data['blog']['subtitle'];
+      $body = $data['blog']['body'];
+      $id = $data['blog']['id'];
       $vars = array(
         'id' => $id,
         'title' => $title,
@@ -55,7 +55,7 @@
     }
 
   } else {
-    echo json_encode(array('status' => 404, 'message' => 'No hay portfolio'));
+    echo json_encode(array('status' => 404, 'message' => 'No hay blog'));
   }
 
 ?>

@@ -7,7 +7,8 @@
         <hr>
         <div class="row">
           <div class="col-md-12 col-sm-8">
-            <img ng-src="assets/img/portfolio/{{ vm.portfolio.img }}" title="{{ vm.portfolio.subtitle }}" class="img-responsive portfolio-img"/>
+            <img ng-src="public/assets/img/portfolio/{{ vm.portfolio.img }}" title="{{ vm.portfolio.subtitle }}" class="img-responsive portfolio-img" ng-if="vm.portfolio.img"/>
+            <img ng-src="assets/img/neuderts-favicon.png" title="{{ vm.portfolio.subtitle }}" class="img-responsive portfolio-img" ng-if="!vm.portfolio.img"/>
           </div>
         </div>
         <hr>
