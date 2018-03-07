@@ -31,26 +31,36 @@ function config($routeProvider, $locationProvider, $qProvider, $provide){
     .when('/admin', {
       templateUrl: 'assets/angular/admin/home.view.html',
       controller: 'adminCtrl',
-      controllerAs: 'vm'
+      controllerAs: 'vm',
+      needsLogin : true
     })
     .when('/admin/blog/new', {
       templateUrl : 'assets/angular/admin/blog/blog.view.html',
       controller : 'newBlogCtrl',
-      controllerAs : 'vm'
+      controllerAs : 'vm',
+      needsLogin : true
     })
     .when('/admin/blog/:id', {
       templateUrl : 'assets/angular/admin/blog/blog.view.html',
       controller : 'editBlogCtrl',
-      controllerAs : 'vm'
+      controllerAs : 'vm',
+      needsLogin : true
     })
     .when('/admin/portfolio/new', {
       templateUrl : 'assets/angular/admin/portfolio/portfolio.view.html',
       controller : 'newPortCtrl',
-      controllerAs : 'vm'
+      controllerAs : 'vm',
+      needsLogin : true
     })
     .when('/admin/portfolio/:id', {
       templateUrl : 'assets/angular/admin/portfolio/portfolio.view.html',
       controller : 'editPortCtrl',
+      controllerAs : 'vm',
+      needsLogin : true
+    })
+    .when('/login', {
+      templateUrl : 'assets/angular/auth/login.view.html',
+      controller : 'loginCtrl',
       controllerAs : 'vm'
     })
     .otherwise({redirectTo: '/'});
@@ -60,6 +70,19 @@ function config($routeProvider, $locationProvider, $qProvider, $provide){
   // $qProvider.errorOnUnhandledRejections(false);
 }
 
+function run($rootScope, $location, authentication) {
+  $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute) {
+    var isLogged = authentication.isLoggedIn();
+    if (nextRoute.needsLogin && !isLogged) {
+      $location.path('/');
+    }
+    if ($location.path() === '/login' && isLogged) {
+      $location.path('/admin');
+    }
+  });
+}
+
 angular
   .module('neuderts')
-  .config(['$routeProvider', '$locationProvider', '$qProvider', config]);
+  .config(['$routeProvider', '$locationProvider', '$qProvider', config])
+  .run(['$rootScope', '$location', 'authentication', run]);

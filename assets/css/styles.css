@@ -200,6 +200,12 @@ h3.blog-subtitle a {
 .btn-success a {
   color: #fff !important;
 }
+.middle-box {
+  max-width: 50%;
+  z-index: 100;
+  margin: 0 auto;
+  padding-bottom: 5%;
+}  
 /* @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 body{
     background-color: #0f121f;

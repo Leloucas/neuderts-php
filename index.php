@@ -76,13 +76,15 @@
     <script src="assets/angular/blog/blog.controller.js" charset="utf-8"></script>
     <script src="assets/angular/post/post.controller.js" charset="utf-8"></script>
     <script src="assets/angular/blog/blog-new.controller.js" charset="utf-8"></script>
+    <script src="assets/angular/auth/login.controller.js" charset="utf-8"></script>
     <script src="assets/angular/contacto/contacto.controller.js" charset="utf-8"></script>
     <script src="assets/angular/portfolio/portfolio.controller.js" charset="utf-8"></script>
     <script src="assets/angular/admin/home.controller.js" charset="utf-8"></script>
     <script src="assets/angular/admin/blog/editBlog.controller.js" charset="utf-8"></script>
     <script src="assets/angular/admin/blog/newBlog.controller.js" charset="utf-8"></script>
     <script src="assets/angular/admin/portfolio/editPortfolio.controller.js" charset="utf-8"></script>
-    <script src="assets/angular/admin/portfolio/newPortfolio.controller.js" charset="utf-8"></script>>
+    <script src="assets/angular/admin/portfolio/newPortfolio.controller.js" charset="utf-8"></script>
+    <script src="assets/angular/services/authentication.service.js" charset="utf-8"></script>
 
     <script src="assets/js/angular-summernote.min.js" charset="utf-8"></script>
     <script src="assets/js/ng-file-upload-shim.min.js" charset="utf-8"></script>
