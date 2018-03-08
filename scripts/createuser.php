@@ -13,12 +13,12 @@ try {
 
 if($dbh){
   $salt = uniqid(mt_rand(), true);
-  $password =  crypt('abcdefg1234', $salt);
+  $password =  crypt('wenzel neudert 1605', $salt);
 
-  $stmt = $dbh->prepare("INSERT INTO users (name, email, password) VALUES ('Lucas', 'lucasg.ruizd@gmail.com', '$password')");
+  $stmt = $dbh->prepare("INSERT INTO users (name, email, password) VALUES ('Wenzel', 'wenzelneudert@gmail.com', '$password')");
 
-  Especificamos el fetch mode antes de llamar a fetch()
-  Ejecutamos
+  // Especificamos el fetch mode antes de llamar a fetch()
+  // Ejecutamos
   $stmt->execute();
   echo $password;
 
