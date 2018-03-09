@@ -21,34 +21,43 @@
     }
 
     if($dbh){
-      $sql = "UPDATE portfolio SET title = :title, slug = :slug, subtitle = :subtitle, body = :body";
-
       $id = $data['portfolio']['id'];
       $title = $data['portfolio']['title'];
       $slug = $data['portfolio']['slug'];
       $subtitle = $data['portfolio']['subtitle'];
       $body = $data['portfolio']['body'];
-      $id = $data['portfolio']['id'];
-      $vars = array(
-        'id' => $id,
-        'title' => $title,
-        'slug' => $slug,
-        'subtitle' => $subtitle,
-        'body' => $body,
-      );
-      if($filename !== ''){
-        // $sql .= ", img = '$filename'";
-        $sql .= ", img = :img";
-        $vars['img'] = $filename;
+
+      $sql = "SELECT 1 FROM portfolio WHERE slug = :slug AND id != :id";
+      $stmtest = $dbh->prepare($sql);
+      $stmtest->execute(array('slug' => $slug, 'id' => $id));
+      $exists = $stmtest->fetch(PDO::FETCH_ASSOC);
+
+      if(!$exists){
+        $sql = "UPDATE portfolio SET title = :title, slug = :slug, subtitle = :subtitle, body = :body";
+
+        $vars = array(
+          'id' => $id,
+          'title' => $title,
+          'slug' => $slug,
+          'subtitle' => $subtitle,
+          'body' => $body,
+        );
+        if($filename !== ''){
+          // $sql .= ", img = '$filename'";
+          $sql .= ", img = :img";
+          $vars['img'] = $filename;
+        }
+
+        $sql .=  " WHERE id = :id";
+        $stmt = $dbh->prepare($sql);
+        $stmt->execute($vars);
+
+        // $port = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        echo json_encode(array('status' => 201, 'message' => 'Editado correctamente'));
+      } else {
+        echo json_encode(array('status' => 409, 'message' => 'Ya existe un registro con ese slug.'));
       }
-
-      $sql .=  " WHERE id = :id";
-      $stmt = $dbh->prepare($sql);
-      $stmt->execute($vars);
-
-      // $port = $stmt->fetch(PDO::FETCH_ASSOC);
-
-      echo json_encode(array('status' => 201, 'message' => 'Editado correctamente'));
 
     } else {
       echo json_encode(array('status' => 500, 'message' => 'Error en el servidor'));

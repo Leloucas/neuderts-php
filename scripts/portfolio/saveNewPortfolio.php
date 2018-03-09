@@ -22,32 +22,42 @@
     }
 
     if($dbh){
-      $sql = "INSERT INTO portfolio (title, slug, subtitle, body";
-      $sql2 = ") VALUES (:title, :slug, :subtitle, :body";
-
       $title = $data['portfolio']['title'];
       $slug = $data['portfolio']['slug'];
       $subtitle = $data['portfolio']['subtitle'];
       $body = $data['portfolio']['body'];
-      $vars = array(
-        'title' => $title,
-        'slug' => $slug,
-        'subtitle' => $subtitle,
-        'body' => $body,
-      );
-      if($filename !== ''){
-        $sql .= ", img";
-        $sql2 .= ", :img";
-        $vars['img'] = $filename;
+
+      $sql = "SELECT 1 FROM portfolio WHERE slug = :slug";
+      $stmtest = $dbh->prepare($sql);
+      $stmtest->execute(array('slug' => $slug));
+      $exists = $stmtest->fetch(PDO::FETCH_ASSOC);
+
+      if(!$exists){
+        $sql = "INSERT INTO portfolio (title, slug, subtitle, body";
+        $sql2 = ") VALUES (:title, :slug, :subtitle, :body";
+
+        $vars = array(
+          'title' => $title,
+          'slug' => $slug,
+          'subtitle' => $subtitle,
+          'body' => $body,
+        );
+        if($filename !== ''){
+          $sql .= ", img";
+          $sql2 .= ", :img";
+          $vars['img'] = $filename;
+        }
+
+        $sql2 .=  ")";
+        $statement = $sql.$sql2;
+        $stmt = $dbh->prepare($statement);
+        $stmt->execute($vars);
+
+
+        echo json_encode(array('status' => 201, 'message' => 'Guardado correctamente'));
+      } else {
+        echo json_encode(array('status' => 409, 'message' => 'Ya existe un registro con ese slug.'));
       }
-
-      $sql2 .=  ")";
-      $statement = $sql.$sql2;
-      $stmt = $dbh->prepare($statement);
-      $stmt->execute($vars);
-
-
-      echo json_encode(array('status' => 201, 'message' => 'Guardado correctamente'));
 
     } else {
       echo json_encode(array('status' => 500, 'message' => 'Error en el servidor'));

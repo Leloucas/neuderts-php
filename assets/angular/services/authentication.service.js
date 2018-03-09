@@ -22,7 +22,6 @@ function authentication ($http, $window, $location) {
   };
 
   var login = function(user) {
-    console.log(user);
     // return $http.post('/neuderts/scripts/session.php', user)
     return $http({
       url: '/neuderts/scripts/session.php',

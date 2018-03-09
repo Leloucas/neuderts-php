@@ -12,6 +12,9 @@ function editPortCtrl($location, neuData, $routeParams, $sce, $window){
 
   vm.portfolio = {};
 
+  vm.loading = false;
+  vm.exists = false;
+
   vm.options = {
     height: 300
   };
@@ -38,20 +41,27 @@ function editPortCtrl($location, neuData, $routeParams, $sce, $window){
 
 
   vm.submitForm = function(){
-
+    vm.loading = true;
+    vm.exists = false;
     neuData.updatePortfolio(vm.portfolio, vm.imagen)
       .then(function(data){
         if(data.data.status === 201){
           alert(data.data.message);
-          $window.history.back();
+          // $window.history.back();
         } else if(data.data.status === 500) {
           alert(data.data.message);
         } else if(data.data.status === 404) {
+          alert(data.data.message);
+        } else if(data.data.status === 409) {
+          vm.exists = true;
           alert(data.data.message);
         }
       })
       .catch(function(error){
         console.log(error);
+      })
+      .finally(function(){
+        vm.loading = false;
       });
   };
 }
