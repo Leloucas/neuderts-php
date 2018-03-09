@@ -22,9 +22,9 @@ function authentication ($http, $window, $location) {
   };
 
   var login = function(user) {
-    // return $http.post('/neuderts/scripts/session.php', user)
+    // return $http.post('/scripts/session.php', user)
     return $http({
-      url: '/neuderts/scripts/session.php',
+      url: '/scripts/session.php',
       method: 'POST',
       data: user
     })
