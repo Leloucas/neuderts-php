@@ -35,6 +35,23 @@
 
       if(!$exists){
 
+        $doc = new DOMDocument();
+        $doc->loadHTML($body);
+        $images = $doc->getElementsByTagName('img');
+
+        foreach ($images as $image) {
+          $img = $image->getAttribute('src');
+          $filename = $image->getAttribute('data-filename');
+          if(substr($img, 0, 10) === 'data:image'){
+            $data = explode( ',', $img );
+            $image = base64_decode($data[1]);
+            $file = '/neuderts/public/assets/img/blog/' . $filename;
+            file_put_contents($_SERVER['DOCUMENT_ROOT'].$file, $image);
+            $body = str_replace($img, $file, $body);
+          }
+
+        }
+
         $sql = "UPDATE blog SET title = :title, slug = :slug, subtitle = :subtitle, body = :body";
 
         $vars = array(

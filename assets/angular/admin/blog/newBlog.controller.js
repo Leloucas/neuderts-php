@@ -24,7 +24,7 @@ function newBlogCtrl($location, neuData, $window){
       .then(function(data){
         if(data.data.status === 201){
           alert(data.data.message);
-          $location.path('/admin');
+          $location.path( '/admin' );
         } else if(data.data.status === 500) {
           alert(data.data.message);
         } else if(data.data.status === 404) {
