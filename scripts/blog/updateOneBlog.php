@@ -7,7 +7,7 @@
     $filename = '';
 
     if(!empty($_FILES)){
-      $filename = basename($_FILES['file']['name']);
+      $filename = time().basename($_FILES['file']['name']);
       $destination = $_SERVER['DOCUMENT_ROOT'] . $data['targetPath'] . $filename;
       move_uploaded_file($_FILES['file']['tmp_name'], $destination);
     }
@@ -41,11 +41,11 @@
 
         foreach ($images as $image) {
           $img = $image->getAttribute('src');
-          $filename = $image->getAttribute('data-filename');
+          $bodyImg = $image->getAttribute('data-filename');
           if(substr($img, 0, 10) === 'data:image'){
             $data = explode( ',', $img );
             $image = base64_decode($data[1]);
-            $file = '/neuderts/public/assets/img/blog/' . $filename;
+            $file = '/neuderts/public/assets/img/blog/' . $bodyImg;
             file_put_contents($_SERVER['DOCUMENT_ROOT'].$file, $image);
             $body = str_replace($img, $file, $body);
           }
