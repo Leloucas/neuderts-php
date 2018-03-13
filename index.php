@@ -16,7 +16,7 @@
     <script src="assets/js/bootstrap.min.js" charset="utf-8"></script>
     <script src="assets/js/fontawesome-all.min.js" charset="utf-8"></script>
     <script src="assets/angular/angular.min.js" charset="utf-8"></script>
-    <script src="assets/js/summernote.min.js" charset="utf-8"></script>
+    <script src="assets/js/summernote.js" charset="utf-8"></script>
 
   </head>
   <body>

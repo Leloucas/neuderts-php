@@ -12,7 +12,22 @@ function newBlogCtrl($location, neuData, $window){
   vm.exists = false;
 
   vm.options = {
-    height: 300
+    height: 300,
+    disableDragAndDrop: true,
+    toolbar: [
+      ['edit',['undo','redo']],
+      ['headline', ['style']],
+      ['style', ['bold', 'italic', 'underline', 'superscript', 'subscript', 'strikethrough', 'clear']],
+      ['fontface', ['fontname']],
+      ['textsize', ['fontsize']],
+      ['fontclr', ['color']],
+      ['alignment', ['ul', 'ol', 'paragraph', 'lineheight']],
+      ['height', ['height']],
+      ['table', ['table']],
+      ['insert', ['link','picture','video','hr']],
+      ['view', ['fullscreen', 'codeview']],
+      ['help', ['help']]
+    ]
   };
 
   vm.blog = {};
