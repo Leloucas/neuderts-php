@@ -3,14 +3,16 @@
     <div class="portfolio-detail">
       <div class="portfolio">
         <h1 class="portfolio-title">{{ vm.portfolio.title }}</h1>
-        <p class="portfolio-subtitle">{{ vm.portfolio.subtitle }} <span>Creado el {{ vm.portfolio.date }}</span></p>
+        <p class="portfolio-subtitle">{{ vm.portfolio.subtitle }}
+          <!-- <span>Creado el {{ vm.portfolio.date }}</span> -->
+        </p>
         <hr>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-md-12 col-sm-8">
             <img ng-src="public/assets/img/portfolio/{{ vm.portfolio.img }}" title="{{ vm.portfolio.subtitle }}" class="img-responsive portfolio-img" ng-if="vm.portfolio.img"/>
             <img ng-src="assets/img/neuderts-favicon.png" title="{{ vm.portfolio.subtitle }}" class="img-responsive portfolio-img" ng-if="!vm.portfolio.img"/>
           </div>
-        </div>
+        </div> -->
         <hr>
         <div class="portfolio-body" ng-bind-html="vm.portfolio.body"></div>
       </div>

@@ -15,7 +15,7 @@
               <th title="URL personalizada">Slug</th>
               <th>Subtitulo</th>
               <th>Fecha de creación</th>
-              <th class="text-center">Activo</th>
+              <th class="text-center">Eliminar</th>
             </thead>
             <tbody>
               <tr ng-repeat="portfolio in vm.portfolios">
@@ -24,8 +24,7 @@
                 <td>{{portfolio.subtitle}}</td>
                 <td>{{portfolio.date | date:'dd-MM-yyyy'}}</td>
                 <td class="text-center">
-                  <span ng-show="portfolio.active == 1" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                  <span ng-show="portfolio.active == 0" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                  <span ng-click="vm.rmPort(portfolio.id)" class="glyphicon glyphicon-remove remove-item" aria-hidden="true"></span>
                 </td>
               </tr>
             </tbody>
@@ -46,7 +45,7 @@
               <th title="URL personalizada">Slug</th>
               <th>Subtitulo</th>
               <th>Fecha de creación</th>
-              <th class="text-center">Activo</th>
+              <th class="text-center">Eliminar</th>
             </thead>
             <tbody>
               <tr ng-repeat="blog in vm.blogs">
@@ -55,8 +54,7 @@
                 <td>{{blog.subtitle}}</td>
                 <td>{{blog.date | date:'dd-MM-yyyy'}}</td>
                 <td class="text-center">
-                  <span ng-show="blog.active == 1" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                  <span ng-show="blog.active == 0" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                  <span ng-click="vm.rmBlog(blog.id)" class="glyphicon glyphicon-remove remove-item" aria-hidden="true"></span>
                 </td>
               </tr>
             </tbody>

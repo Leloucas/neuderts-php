@@ -75,6 +75,9 @@ nav .navbar-brand img{
   height: 100px;
   margin-bottom: 10%;
 }
+.item-title{
+  font-size: 25px;
+}
 #portfolioItem {
   text-align: center;
   color: #000;
@@ -218,6 +221,11 @@ h3.blog-subtitle a {
 }
 .input-alert, input.ng-touched.ng-invalid{
   border: solid 1px red;
+}
+span.remove-item{
+  color: red;
+  cursor: pointer;
+  padding: 6px;
 }
 /* @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 body{
