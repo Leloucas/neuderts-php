@@ -10,10 +10,28 @@ function editBlogCtrl($location, neuData, $routeParams, $sce, $window){
 
   var id = $routeParams.id;
 
+  vm.loading = false;
+  vm.exists = false;
+
   vm.blog = {};
 
   vm.options = {
-    height: 300
+    height: 300,
+    disableDragAndDrop: true,
+    toolbar: [
+      ['edit',['undo','redo']],
+      ['headline', ['style']],
+      ['style', ['bold', 'italic', 'underline', 'superscript', 'subscript', 'strikethrough', 'clear']],
+      ['fontface', ['fontname']],
+      ['textsize', ['fontsize']],
+      ['fontclr', ['color']],
+      ['alignment', ['ul', 'ol', 'paragraph', 'lineheight']],
+      ['height', ['height']],
+      ['table', ['table']],
+      ['insert', ['link','picture','video','hr']],
+      ['view', ['fullscreen', 'codeview']],
+      ['help', ['help']]
+    ]
   };
 
   neuData.getBlogAdmin(id)
@@ -36,7 +54,8 @@ function editBlogCtrl($location, neuData, $routeParams, $sce, $window){
   });
 
   vm.submitForm = function(){
-
+    vm.loading = true;
+    vm.exists = false;
     neuData.updateBlog(vm.blog, vm.imagen)
       .then(function(data){
         if(data.data.status === 201){
@@ -46,10 +65,19 @@ function editBlogCtrl($location, neuData, $routeParams, $sce, $window){
           alert(data.data.message);
         } else if(data.data.status === 404) {
           alert(data.data.message);
+        } else if(data.data.status === 409) {
+          vm.exists = true;
+          alert(data.data.message);
+        } else {
+          alert("Ha ocurrido un error");
         }
       })
       .catch(function(error){
+      	alert("Ha ocurrido un error");
         console.log(error);
+      })
+      .finally(function(){
+        vm.loading = false;
       });
   };
 }

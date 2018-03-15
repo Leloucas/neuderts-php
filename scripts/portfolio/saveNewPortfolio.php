@@ -7,7 +7,7 @@
     $filename = '';
 
     if(!empty($_FILES)){
-      $filename = basename($_FILES['file']['name']);
+      $filename = time().basename($_FILES['file']['name']);
       $destination = $_SERVER['DOCUMENT_ROOT'] . $data['targetPath'] . $filename;
       move_uploaded_file($_FILES['file']['tmp_name'], $destination);
     }
@@ -22,32 +22,58 @@
     }
 
     if($dbh){
-      $sql = "INSERT INTO portfolio (title, slug, subtitle, body";
-      $sql2 = ") VALUES (:title, :slug, :subtitle, :body";
-
       $title = $data['portfolio']['title'];
       $slug = $data['portfolio']['slug'];
       $subtitle = $data['portfolio']['subtitle'];
       $body = $data['portfolio']['body'];
-      $vars = array(
-        'title' => $title,
-        'slug' => $slug,
-        'subtitle' => $subtitle,
-        'body' => $body,
-      );
-      if($filename !== ''){
-        $sql .= ", img";
-        $sql2 .= ", :img";
-        $vars['img'] = $filename;
+
+      $sql = "SELECT 1 FROM portfolio WHERE slug = :slug";
+      $stmtest = $dbh->prepare($sql);
+      $stmtest->execute(array('slug' => $slug));
+      $exists = $stmtest->fetch(PDO::FETCH_ASSOC);
+
+      if(!$exists){
+      
+      	$doc = new DOMDocument();
+        $doc->loadHTML($body);
+        $images = $doc->getElementsByTagName('img');
+        foreach ($images as $image) {
+          $img = $image->getAttribute('src');
+          $bodyImg = $image->getAttribute('data-filename');
+          if(substr($img, 0, 10) === 'data:image'){
+            $data = explode( ',', $img );
+            $image = base64_decode($data[1]);
+            $file = '/public/assets/img/portfolio/' . $bodyImg;
+            file_put_contents($_SERVER['DOCUMENT_ROOT'].$file, $image);
+            $body = str_replace($img, $file, $body);
+          }
+        }
+        
+        $sql = "INSERT INTO portfolio (title, slug, subtitle, body";
+        $sql2 = ") VALUES (:title, :slug, :subtitle, :body";
+
+        $vars = array(
+          'title' => $title,
+          'slug' => $slug,
+          'subtitle' => $subtitle,
+          'body' => $body,
+        );
+        if($filename !== ''){
+          $sql .= ", img";
+          $sql2 .= ", :img";
+          $vars['img'] = $filename;
+        }
+
+        $sql2 .=  ")";
+        $statement = $sql.$sql2;
+        $stmt = $dbh->prepare($statement);
+        $stmt->execute($vars);
+
+
+        echo json_encode(array('status' => 201, 'message' => 'Guardado correctamente'));
+      } else {
+        echo json_encode(array('status' => 409, 'message' => 'Ya existe un registro con ese slug.'));
       }
-
-      $sql2 .=  ")";
-      $statement = $sql.$sql2;
-      $stmt = $dbh->prepare($statement);
-      $stmt->execute($vars);
-
-
-      echo json_encode(array('status' => 201, 'message' => 'Guardado correctamente'));
 
     } else {
       echo json_encode(array('status' => 500, 'message' => 'Error en el servidor'));
