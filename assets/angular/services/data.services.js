@@ -95,6 +95,10 @@ function neuData($http, $window, Upload){
     return $http.post('/neuderts/scripts/portfolio/deletePortfolio.php', id).then(complete).catch(failed);
   }
 
+  function sendEmail(data){
+    return $http.post('/neuderts/scripts/sendEmail.php', data).then(complete).catch(failed);
+  }
+
   function complete(response){
     return response;
   }
@@ -115,6 +119,7 @@ function neuData($http, $window, Upload){
     updatePortfolio : updatePortfolio,
     updateBlog : updateBlog,
     deleteBlog : deleteBlog,
-    deletePortfolio : deletePortfolio
+    deletePortfolio : deletePortfolio,
+    sendEmail : sendEmail
   }
 }
