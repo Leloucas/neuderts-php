@@ -13,7 +13,7 @@ function contactoCtrl($location, neuData, $timeout, $window){
     neuData.sendEmail(vm.info)
       .then(function(data){
         if(data.data.status === 201){
-          // vm.sent = true;
+          vm.sent = true;
           vm.contacto.$setUntouched();
           vm.info = {};
           $window.scrollTo(0,0);
