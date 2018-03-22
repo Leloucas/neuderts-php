@@ -86,13 +86,18 @@ function neuData($http, $window, Upload){
 
     return Upload.upload(req).then(complete).catch(failed);
   }
-  
+
   function deleteBlog(id){
     return $http.post('/scripts/blog/deleteBlog.php', id).then(complete).catch(failed);
   }
 
   function deletePortfolio(id){
     return $http.post('/scripts/portfolio/deletePortfolio.php', id).then(complete).catch(failed);
+  }
+
+
+  function sendEmail(data){
+    return $http.post('/scripts/sendEmail.php', data).then(complete).catch(failed);
   }
 
   function complete(response){
@@ -115,6 +120,7 @@ function neuData($http, $window, Upload){
     updatePortfolio : updatePortfolio,
     updateBlog : updateBlog,
     deleteBlog : deleteBlog,
-    deletePortfolio : deletePortfolio
+    deletePortfolio : deletePortfolio,
+    sendEmail : sendEmail
   }
 }

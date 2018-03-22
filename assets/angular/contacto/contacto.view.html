@@ -5,21 +5,28 @@
     </div>
   </div>
   <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-success text-center" ng-show="vm.sent">
+        Su correo ha sido enviado, muchas gracias.
+      </div>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-md-6 col-sm-12">
-      <form ng-submit="vm.contactar()">
+      <form ng-submit="vm.contactar()" name="vm.contacto">
         <div class="form-group">
           <label for="nombre">Nombre</label>
-          <input type="text" name="nombre" id="nombre" ng-model="vm.nombre" class="form-control" ng-required>
+          <input type="text" name="nombre" id="nombre" ng-model="vm.info.nombre" class="form-control" ng-maxlength="50" ng-required="true">
         </div>
         <div class="form-group">
           <label for="email">Correo electrónico</label>
-          <input type="text" name="email" id="email" ng-model="vm.email" class="form-control" ng-required>
+          <input type="text" name="email" id="email" ng-model="vm.info.email" class="form-control" ng-maxlength="50" ng-required="true">
         </div>
         <div class="form-group">
           <label for="message">¿Qué nos quieres contar?</label>
-          <textarea name="message" id="message" cols="30" ng-model="vm.message" rows="10" class="form-control" ng-required></textarea>
+          <textarea name="message" id="message" cols="30" ng-model="vm.info.message" rows="10" class="form-control" placeholder="(500 caracteres máximo)" ng-maxlength="500" ng-required="true"></textarea>
         </div>
-        <button class="btn btn-custom">Contáctanos</button>
+        <button class="btn btn-custom" type="submit" ng-disabled=" vm.contacto.$invalid && !vm.sent">Contáctanos</button>
       </form>
     </div>
   </div>
