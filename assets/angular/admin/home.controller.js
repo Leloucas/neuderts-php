@@ -49,7 +49,7 @@ function adminCtrl($location, neuData, $window){
           }
         }).catch(function(error){
           console.log(error);
-        }).catch(function(){
+        }).finally(function(){
           vm.loading = false;
         });
     }
@@ -71,7 +71,7 @@ function adminCtrl($location, neuData, $window){
           }
         }).catch(function(error){
           console.log(error);
-        }).catch(function(){
+        }).finally(function(){
           vm.loading = false;
         });
     }
@@ -83,6 +83,72 @@ function adminCtrl($location, neuData, $window){
     });
     var item = arr.indexOf(index[0]);
     arr.splice(item, 1);
+  }
+
+  vm.sortPortfolioOptions = {
+    start: function(e, ui) {},
+    stop: function(e, ui) {
+      vm.loading = true;
+      vm.portfolios.map(function(i, index, arr){
+        newPortfolioOrder(parseInt(i.id, 10), index);
+      });
+      vm.loading = false;
+    },
+    update: function(e, ui) { }
+  };
+
+  function newPortfolioOrder(id, newIndex) {
+    var pError = false;
+    neuData.updatePortfolioOrder(id, newIndex)
+      .then(function(data){
+        if(data.data.status === 201){
+          pError = false;
+          console.log(data.data.message);
+        } else if(data.data.status === 500) {
+          pError = true;
+          console.log(data.data.message);
+        } else if(data.data.status === 404) {
+          pError = true;
+          console.log(data.data.message);
+        }
+      })
+      .catch(function(error){
+        console.log(error);
+      });
+    return;
+  }
+  
+  vm.sortBlogOptions = {
+    start: function(e, ui) {},
+    stop: function(e, ui) {
+      vm.loading = true;
+      vm.blogs.map(function(i, index, arr){
+        newBlogOrder(parseInt(i.id, 10), index);
+      });
+      vm.loading = false;
+    },
+    update: function(e, ui) { }
+  };
+
+  function newBlogOrder(id, newIndex) {
+    var pError = false;
+    neuData.updateBlogOrder(id, newIndex)
+      .then(function(data){
+        if(data.data.status === 201){
+          pError = false;
+          console.log(data.data.message);
+        } else if(data.data.status === 500) {
+          pError = true;
+          console.log(data.data.message);
+        } else if(data.data.status === 404) {
+          pError = true;
+          console.log(data.data.message);
+        }
+      })
+      .catch(function(error){
+        console.log(error);
+      });
+    return;
   }
 
 }

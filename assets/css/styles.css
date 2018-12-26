@@ -227,6 +227,9 @@ span.remove-item{
   cursor: pointer;
   padding: 6px;
 }
+#portfolioTable tbody tr, #blogTable tbody tr{
+  cursor: move;
+}
 /* @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 body{
     background-color: #0f121f;

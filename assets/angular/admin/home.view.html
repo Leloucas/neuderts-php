@@ -17,8 +17,8 @@
               <th>Fecha de creación</th>
               <th class="text-center">Eliminar</th>
             </thead>
-            <tbody>
-              <tr ng-repeat="portfolio in vm.portfolios">
+            <tbody ui-sortable="vm.sortPortfolioOptions" ng-model="vm.portfolios">
+              <tr ng-repeat="portfolio in vm.portfolios track by $index">
                 <td><a ng-href="#!/admin/portfolio/{{portfolio.id}}">{{portfolio.title}}</a></td>
                 <td><a ng-href="#!/admin/portfolio/{{portfolio.id}}">{{portfolio.slug}}</a></td>
                 <td>{{portfolio.subtitle}}</td>
@@ -47,8 +47,8 @@
               <th>Fecha de creación</th>
               <th class="text-center">Eliminar</th>
             </thead>
-            <tbody>
-              <tr ng-repeat="blog in vm.blogs">
+            <tbody ui-sortable="vm.sortBlogOptions" ng-model="vm.blogs">
+              <tr ng-repeat="blog in vm.blogs track by $index">
                 <td><a ng-href="#!/admin/blog/{{blog.id}}">{{blog.title}}</a></td>
                 <td><a ng-href="#!/admin/blog/{{blog.id}}">{{blog.slug}}</a></td>
                 <td>{{blog.subtitle}}</td>

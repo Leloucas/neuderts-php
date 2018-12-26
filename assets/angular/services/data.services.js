@@ -99,6 +99,25 @@ function neuData($http, $window, Upload){
     return $http.post('/neuderts/scripts/sendEmail.php', data).then(complete).catch(failed);
   }
 
+  function updatePortfolioOrder(id, order){
+
+    return $http({
+      method: 'POST',
+      url: '/neuderts/scripts/portfolio/updatePortfolioOrder.php',
+      data: [id, order], 
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+   }).then(complete).catch(failed);
+  }
+
+  function updateBlogOrder(id, order){
+    return $http({
+      method: 'POST',
+      url: '/neuderts/scripts/blog/updateBlogOrder.php',
+      data: [id, order], 
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+    }).then(complete).catch(failed);
+  }
+
   function complete(response){
     return response;
   }
@@ -120,6 +139,8 @@ function neuData($http, $window, Upload){
     updateBlog : updateBlog,
     deleteBlog : deleteBlog,
     deletePortfolio : deletePortfolio,
-    sendEmail : sendEmail
+    sendEmail : sendEmail,
+    updatePortfolioOrder : updatePortfolioOrder,
+    updateBlogOrder : updateBlogOrder
   }
 }
