@@ -1,6 +1,0 @@
-.gitignore
-env.php
-scripts/createuser.php
-public/assets/img/blog
-public/assets/img/portfolio
-

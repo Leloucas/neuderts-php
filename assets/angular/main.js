@@ -1,4 +1,4 @@
-angular.module('neuderts', ['ngRoute', 'summernote', 'ngFileUpload']);
+angular.module('neuderts', ['ngRoute', 'summernote', 'ngFileUpload', 'ui.sortable']);
 
 function config($routeProvider, $locationProvider, $qProvider, $provide){
 

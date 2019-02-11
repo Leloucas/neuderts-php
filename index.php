@@ -14,11 +14,11 @@
 
 
     <script src="assets/js/jquery-3.2.1.min.js" charset="utf-8"></script>
+    <script src="assets/js/jqueryui.1.12.min.js" charset="utf-8"></script>
     <script src="assets/js/bootstrap.min.js" charset="utf-8"></script>
     <script src="assets/js/fontawesome-all.min.js" charset="utf-8"></script>
     <script src="assets/angular/angular.min.js" charset="utf-8"></script>
     <script src="assets/js/summernote.js" charset="utf-8"></script>
-
 
   </head>
   <body>
@@ -96,5 +96,6 @@
     <script src="assets/js/angular-summernote.min.js" charset="utf-8"></script>
     <script src="assets/js/ng-file-upload-shim.min.js" charset="utf-8"></script>
     <script src="assets/js/ng-file-upload-all.min.js" charset="utf-8"></script>
+    <script src="assets/js/sortable.js" charset="utf-8"></script>
   </body>
 </html>

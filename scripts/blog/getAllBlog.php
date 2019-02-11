@@ -17,7 +17,7 @@ try {
 }
 
 if($dbh){
-  $stmt = $dbh->prepare("SELECT id, title, slug, subtitle, img, date, active FROM blog WHERE active = 1 ORDER BY date DESC");
+  $stmt = $dbh->prepare("SELECT id, title, slug, subtitle, img, date, active, display FROM blog WHERE active = 1 ORDER BY display ASC");
   // Especificamos el fetch mode antes de llamar a fetch()
   $stmt->setFetchMode(PDO::FETCH_ASSOC);
   // Ejecutamos
