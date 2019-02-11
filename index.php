@@ -6,6 +6,7 @@
     <link rel="shortcut icon" type="image/png" href="assets/img/neuderts-favicon.png"/>
 
 
+
     <title>Neuderts</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/summernote.min.css">
@@ -17,6 +18,7 @@
     <script src="assets/js/fontawesome-all.min.js" charset="utf-8"></script>
     <script src="assets/angular/angular.min.js" charset="utf-8"></script>
     <script src="assets/js/summernote.js" charset="utf-8"></script>
+
 
   </head>
   <body>
@@ -37,11 +39,12 @@
         <div class="collapse navbar-collapse" id="neuNavCollapse">
           <div class="navbar-right">
             <ul class="nav navbar-nav navbar-right">
-              <li><a ng-href="#!/">Inicio</a></li>
+              <li><a ng-href="#!/video">Video</a></li>
+              <li><a ng-href="#!/diseño">Diseño</a></li>
               <li><a ng-href="#!/contacto">Contacto</a></li>
-              <li><a ng-href="#!/blog">Blog</a></li>
-              <li><a href="https://www.facebook.com/neuderts" target="_blank">Facebook</a></li>
               <li><a href="https://www.instagram.com/neudertsmx" target="_blank">Instagram</a></li>
+              <li><a href="https://www.facebook.com/neuderts" target="_blank">Facebook</a></li>
+              <li><a href="https://vimeo.com/neuderts" target="_blank">Vimeo</a></li>
             </ul>
           </div>
         </div>
@@ -56,14 +59,18 @@
       <div class="container">
         <div class="row">
           <p class="text-center" style="font-weight: normal;font-size: 12px;">
-            Neuderts 2018
-            <span class="pull-right text-right" class="footer-contacto">
-              (+52) 3 10 34 10
+            <span class="pull-middle text-center footer-contacto"">
+              Contáctanos.
               <br>
-              contacto@neuderts.com
+              contacto@neuderts.com | (+52) 3 10 34 10
               <br>
               Hermosillo, Sonora, México
             </span>
+            <hr>
+            <span class="pull-left text-left footer-contacto">
+              &copy; Neuderts 2018 Todos los Derechos Reservados.
+            </span>
+            <span class="pull-right text-right footer-contacto"><a href="#!/contacto">Contacto</a></span>
           </p>
         </div>
       </div>

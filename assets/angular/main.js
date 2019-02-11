@@ -4,7 +4,17 @@ function config($routeProvider, $locationProvider, $qProvider, $provide){
 
   $routeProvider
     .when('/', {
-      templateUrl: 'assets/angular/home/home.view.html',
+      templateUrl: 'assets/angular/home/home.view.html', 
+      controller: 'homeCtrl',
+      controllerAs: 'vm'
+    })
+    .when('/video',{
+      templateUrl: 'assets/angular/video/video.view.html',
+      controller: 'homeCtrl',
+      controllerAs: 'vm'
+    })
+    .when('/diseño',{
+      templateUrl: 'assets/angular/diseño/diseño.view.html',
       controller: 'homeCtrl',
       controllerAs: 'vm'
     })
@@ -13,6 +23,7 @@ function config($routeProvider, $locationProvider, $qProvider, $provide){
       controller: 'contactoCtrl',
       controllerAs: 'vm'
     })
+    /* Deshabilitación de
     .when('/blog',{
       templateUrl: 'assets/angular/blog/blog.view.html',
       controller: 'blogCtrl',
@@ -23,6 +34,7 @@ function config($routeProvider, $locationProvider, $qProvider, $provide){
       controller: 'postCtrl',
       controllerAs: 'vm'
     })
+    */
     .when('/portfolio/:slug', {
       templateUrl: 'assets/angular/portfolio/portfolio.view.html',
       controller: 'portfolioCtrl',
@@ -66,11 +78,11 @@ function config($routeProvider, $locationProvider, $qProvider, $provide){
     .otherwise({redirectTo: '/'});
 
   // use the HTML5 History API
-  // $locationProvider.html5Mode(true);
+  //$locationProvider.html5Mode(true);
   // $qProvider.errorOnUnhandledRejections(false);
 }
 
-function run($rootScope, $location, authentication) {
+function run ($rootScope, $location, authentication) {
   $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute) {
     var isLogged = authentication.isLoggedIn();
     if (nextRoute.needsLogin && !isLogged) {
@@ -80,7 +92,7 @@ function run($rootScope, $location, authentication) {
       $location.path('/admin');
     }
   });
-}
+};
 
 angular
   .module('neuderts')

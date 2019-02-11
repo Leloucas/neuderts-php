@@ -17,15 +17,13 @@ nav .navbar-brand img{
   max-width: 180px;
 }
 .navbar-nav > li{
-  font-size: 11px;
+  font-size: 14px;
 }
 .navbar-default .navbar-nav > li > a{
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #000;
-  text-transform: uppercase;
-}
-.container{
-  max-width: 70%;
+  letter-spacing: 2px;
+   text-transform: lowercase;
 }
 @media(max-width: 768px){
   .container{
@@ -36,6 +34,7 @@ nav .navbar-brand img{
     margin: 0 25px;
 }
 .footer{
+  margin-top: 126px;
   border-top: 1px solid #e7e7e7;
   padding: 14px 0;
   line-height: 25px;
@@ -75,9 +74,6 @@ nav .navbar-brand img{
   min-height: 100px;
   height: auto;
   margin-bottom: 10%;
-}
-.item-title{
-  font-size: 25px;
 }
 #portfolioItem {
   text-align: center;
@@ -228,6 +224,8 @@ span.remove-item{
   cursor: pointer;
   padding: 6px;
 }
+
+
 /* @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 body{
     background-color: #0f121f;
@@ -248,3 +246,74 @@ a, a:hover, a:visited{
     color: #bbb;
     text-decoration: none;
 } */
+
+/*Actualizacion de Angel y Romualdo aqui abajo.*/
+ul.nav.navbar-nav.navbar-right {
+    width: 550px;
+}
+
+.col-md-4.col-sm-4.col-xs-4.ng-scope {
+    padding: 3px;
+}
+div.item-container{
+  background-color: white;
+}
+
+img.img-responsive.item.ng-scope{
+  transition: 300ms ease opacity;
+  -moz-transition: 300ms ease opacity;
+  -webkit-transition: 300ms ease opacity;
+}
+
+img.img-responsive.item.ng-scope:hover{
+  opacity: 0.3;
+}
+.navbar-default {
+    background-color: #FFF;
+    border-color: #FFF;
+    margin-bottom: 32px;
+}
+a {
+    transition: 300ms ease color;
+}
+
+.container {
+    margin-left: 10%;
+    width: 80%;
+    margin-right: 10%;
+}
+
+.item-caption {
+    background-color: white;
+    display: block;
+    padding: 0;
+    margin: 0;
+    padding-top: 7px;
+    line-height: 12px;
+    font-size: 10px;
+    text-align: center;
+    min-height: 30px;
+    max-height: 94px !important;
+}
+.item-title{
+  text-transform: uppercase;
+}
+.item-subtitle {
+    color: #9a9a9a;
+    text-transform: lowercase;
+}
+
+.item-title{
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.col-md-3.col-sm-12.col-xs-12.ng-scope {
+    padding: 5px 5px 2.5px 2.5px;
+}
+
+@media (min-width: 768px){
+  .navbar-right {
+    margin-right: -10px;
+  }
+}

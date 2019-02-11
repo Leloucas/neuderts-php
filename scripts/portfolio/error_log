@@ -104,3 +104,22 @@ Stack trace:
 [13-Mar-2018 15:21:33 America/Mexico_City] PHP Warning:  DOMDocument::loadHTML(): Unexpected end tag : p in Entity, line: 1 in /home/neuderts/public_html/prueba_neuderts/scripts/portfolio/updateOnePortfolio.php on line 38
 [13-Mar-2018 15:24:52 America/Mexico_City] PHP Warning:  DOMDocument::loadHTML(): Unexpected end tag : p in Entity, line: 1 in /home/neuderts/public_html/prueba_neuderts/scripts/portfolio/updateOnePortfolio.php on line 38
 [14-Mar-2018 10:44:25 America/Mexico_City] PHP Deprecated:  Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead. in Unknown on line 0
+[01-Aug-2018 13:56:33 America/Mexico_City] PHP Deprecated:  Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead. in Unknown on line 0
+[05-Nov-2018 16:59:20 America/Mexico_City] PHP Warning:  DOMDocument::loadHTML(): Empty string supplied as input in /home/neuderts/public_html/scripts/portfolio/saveNewPortfolio.php on line 38
+[05-Nov-2018 16:59:20 America/Mexico_City] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'body' cannot be null' in /home/neuderts/public_html/scripts/portfolio/saveNewPortfolio.php:70
+Stack trace:
+#0 /home/neuderts/public_html/scripts/portfolio/saveNewPortfolio.php(70): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/neuderts/public_html/scripts/portfolio/saveNewPortfolio.php on line 70
+[05-Nov-2018 16:59:33 America/Mexico_City] PHP Warning:  DOMDocument::loadHTML(): Empty string supplied as input in /home/neuderts/public_html/scripts/portfolio/saveNewPortfolio.php on line 38
+[05-Nov-2018 16:59:33 America/Mexico_City] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'body' cannot be null' in /home/neuderts/public_html/scripts/portfolio/saveNewPortfolio.php:70
+Stack trace:
+#0 /home/neuderts/public_html/scripts/portfolio/saveNewPortfolio.php(70): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/neuderts/public_html/scripts/portfolio/saveNewPortfolio.php on line 70
+[05-Nov-2018 17:15:24 America/Mexico_City] PHP Warning:  DOMDocument::loadHTML(): Unexpected end tag : p in Entity, line: 2 in /home/neuderts/public_html/scripts/portfolio/updateOnePortfolio.php on line 38
+[05-Nov-2018 17:16:00 America/Mexico_City] PHP Warning:  DOMDocument::loadHTML(): Unexpected end tag : p in Entity, line: 2 in /home/neuderts/public_html/scripts/portfolio/updateOnePortfolio.php on line 38
+[01-Dec-2018 14:23:21 America/Mexico_City] PHP Deprecated:  Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead. in Unknown on line 0
+[01-Dec-2018 14:28:00 America/Mexico_City] PHP Deprecated:  Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead. in Unknown on line 0
+[01-Dec-2018 14:29:15 America/Mexico_City] PHP Deprecated:  Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead. in Unknown on line 0
+[01-Dec-2018 14:31:37 America/Mexico_City] PHP Warning:  DOMDocument::loadHTML(): Unexpected end tag : p in Entity, line: 2 in /home/neuderts/public_html/scripts/portfolio/updateOnePortfolio.php on line 38
