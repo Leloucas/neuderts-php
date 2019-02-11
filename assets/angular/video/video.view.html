@@ -1,0 +1,41 @@
+
+<div class="row">
+  <div class="col-md-3 col-sm-12 col-xs-12 {{portfolio.subtitle}}" ng-repeat="portfolio in vm.portfolios ">
+    <div class="item-container">
+      <a ng-href="#!/portfolio/{{ portfolio.slug }}">
+        <img ng-src="public/assets/img/portfolio/{{ portfolio.img }}" alt="{{ portfolio.title }}" title="{{ portfolio.title }}" class="img-responsive item" ng-if="portfolio.img"/>
+        <img ng-src="assets/img/neuderts-favicon.png " alt="{{ portfolio.title }}" title="{{ portfolio.title }}" class="img-responsive item" ng-if="!portfolio.img"/>
+      </a>
+    </div>
+    <div class="item-caption" title="Creado el {{ portfolio.date|date:'D d M Y' }}">
+      <span class="item-title pull-middle text-center">{{ portfolio.title }}</span> <br>
+      <span class="item-subtitle pull-middle text-center">{{ portfolio.subtitle }}</span>
+    </div>
+  </div>
+</div>
+<style>
+  
+  .branding,
+  .Branding{
+    display: none;
+  }
+
+  .video,
+  .Video,
+  .documental,
+  .Documental,
+  .comercial,
+  .Comercial,
+  .Animación,
+  .animación,
+  .Cortometraje,
+  .cortometraje{
+    display: block;
+  }
+
+  .col-md-3.col-sm-12.col-xs-12 {
+      padding-bottom: 7px;
+      padding-left: 5px;
+      padding-right: 5px;
+  }
+</style>
