@@ -4,33 +4,33 @@ neuData.$inject = ['$http', '$window', 'Upload'];
 
 function neuData($http, $window, Upload){
   function getAllPortfolio(){
-    return $http.get('/neuderts/scripts/portfolio/getAllPortfolio.php').then(complete).catch(failed);
+    return $http.get('/scripts/portfolio/getAllPortfolio.php').then(complete).catch(failed);
   }
 
   function getOnePortfolio(slug){
-    return $http.get('/neuderts/scripts/portfolio/getOnePortfolio.php?slug='+slug).then(complete).catch(failed);
+    return $http.get('/scripts/portfolio/getOnePortfolio.php?slug='+slug).then(complete).catch(failed);
   }
 
   function getPortfolioAdmin(id){
-    return $http.get('/neuderts/scripts/portfolio/getOnePortfolio.php?id='+id).then(complete).catch(failed);
+    return $http.get('/scripts/portfolio/getOnePortfolio.php?id='+id).then(complete).catch(failed);
   }
 
   function getAllBlog(){
-    return $http.get('/neuderts/scripts/blog/getAllBlog.php').then(complete).catch(failed);
+    return $http.get('/scripts/blog/getAllBlog.php').then(complete).catch(failed);
   }
 
   function getOneBlog(slug){
-    return $http.get('/neuderts/scripts/blog/getOneBlog.php?slug='+slug).then(complete).catch(failed);
+    return $http.get('/scripts/blog/getOneBlog.php?slug='+slug).then(complete).catch(failed);
   }
 
   function getBlogAdmin(id){
-    return $http.get('/neuderts/scripts/blog/getOneBlog.php?id='+id).then(complete).catch(failed);
+    return $http.get('/scripts/blog/getOneBlog.php?id='+id).then(complete).catch(failed);
   }
 
   function savePortfolio(data, img){
 
     var req = {
-      url: '/neuderts/scripts/portfolio/saveNewPortfolio.php',
+      url: '/scripts/portfolio/saveNewPortfolio.php',
       method: 'POST',
       file: img,
       data: {
@@ -45,7 +45,7 @@ function neuData($http, $window, Upload){
   function saveBlog(data, img){
 
     var req = {
-      url: '/neuderts/scripts/blog/saveNewBlog.php',
+      url: '/scripts/blog/saveNewBlog.php',
       method: 'POST',
       file: img,
       data: {
@@ -60,7 +60,7 @@ function neuData($http, $window, Upload){
   function updatePortfolio(data, img){
 
     var req = {
-      url: '/neuderts/scripts/portfolio/updateOnePortfolio.php',
+      url: '/scripts/portfolio/updateOnePortfolio.php',
       method: 'POST',
       file: img,
       data: {
@@ -75,7 +75,7 @@ function neuData($http, $window, Upload){
   function updateBlog(data, img){
 
     var req = {
-      url: '/neuderts/scripts/blog/updateOneBlog.php',
+      url: '/scripts/blog/updateOneBlog.php',
       method: 'POST',
       file: img,
       data: {
@@ -88,22 +88,22 @@ function neuData($http, $window, Upload){
   }
 
   function deleteBlog(id){
-    return $http.post('/neuderts/scripts/blog/deleteBlog.php', id).then(complete).catch(failed);
+    return $http.post('/scripts/blog/deleteBlog.php', id).then(complete).catch(failed);
   }
 
   function deletePortfolio(id){
-    return $http.post('/neuderts/scripts/portfolio/deletePortfolio.php', id).then(complete).catch(failed);
+    return $http.post('/scripts/portfolio/deletePortfolio.php', id).then(complete).catch(failed);
   }
 
   function sendEmail(data){
-    return $http.post('/neuderts/scripts/sendEmail.php', data).then(complete).catch(failed);
+    return $http.post('/scripts/sendEmail.php', data).then(complete).catch(failed);
   }
 
   function updatePortfolioOrder(id, order){
 
     return $http({
       method: 'POST',
-      url: '/neuderts/scripts/portfolio/updatePortfolioOrder.php',
+      url: '/scripts/portfolio/updatePortfolioOrder.php',
       data: [id, order], 
       headers: {'Content-Type': 'application/x-www-form-urlencoded'}
    }).then(complete).catch(failed);
@@ -112,7 +112,7 @@ function neuData($http, $window, Upload){
   function updateBlogOrder(id, order){
     return $http({
       method: 'POST',
-      url: '/neuderts/scripts/blog/updateBlogOrder.php',
+      url: '/scripts/blog/updateBlogOrder.php',
       data: [id, order], 
       headers: {'Content-Type': 'application/x-www-form-urlencoded'}
     }).then(complete).catch(failed);
