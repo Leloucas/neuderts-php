@@ -10,12 +10,12 @@ function config($routeProvider, $locationProvider, $qProvider, $provide){
     })
     .when('/video',{
       templateUrl: 'assets/angular/video/video.view.html',
-      controller: 'homeCtrl',
+      controller: 'videoCtrl',
       controllerAs: 'vm'
     })
     .when('/diseño',{
-      templateUrl: 'assets/angular/diseño/diseño.view.html',
-      controller: 'homeCtrl',
+      templateUrl: 'assets/angular/branding/branding.view.html',
+      controller: 'brandingCtrl',
       controllerAs: 'vm'
     })
     .when('/contacto', {
@@ -23,7 +23,6 @@ function config($routeProvider, $locationProvider, $qProvider, $provide){
       controller: 'contactoCtrl',
       controllerAs: 'vm'
     })
-    /* Deshabilitación de
     .when('/blog',{
       templateUrl: 'assets/angular/blog/blog.view.html',
       controller: 'blogCtrl',
@@ -34,7 +33,6 @@ function config($routeProvider, $locationProvider, $qProvider, $provide){
       controller: 'postCtrl',
       controllerAs: 'vm'
     })
-    */
     .when('/portfolio/:slug', {
       templateUrl: 'assets/angular/portfolio/portfolio.view.html',
       controller: 'portfolioCtrl',
@@ -78,8 +76,8 @@ function config($routeProvider, $locationProvider, $qProvider, $provide){
     .otherwise({redirectTo: '/'});
 
   // use the HTML5 History API
-  //$locationProvider.html5Mode(true);
-  // $qProvider.errorOnUnhandledRejections(false);
+  $locationProvider.html5Mode(true);
+  $qProvider.errorOnUnhandledRejections(false);
 }
 
 function run ($rootScope, $location, authentication) {

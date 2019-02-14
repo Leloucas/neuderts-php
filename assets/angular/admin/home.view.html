@@ -6,21 +6,29 @@
       <div class="col-md-12">
         <h3 class="pull-left">Portfolio</h3>
         <button type="button" class="btn btn-sm btn-success pull-right">
-          <a ng-href="#!/admin/portfolio/new">Crear</a>
+          <a ng-href="./admin/portfolio/new">Crear</a>
         </button>
         <div class="table-container">
           <table class="table table-condensed" id="portfolioTable">
             <thead>
               <th>Titulo</th>
               <th title="URL personalizada">Slug</th>
+              <th class="text-center">Tipo</th>
               <th>Subtitulo</th>
               <th>Fecha de creación</th>
               <th class="text-center">Eliminar</th>
             </thead>
             <tbody ui-sortable="vm.sortPortfolioOptions" ng-model="vm.portfolios">
               <tr ng-repeat="portfolio in vm.portfolios track by $index">
-                <td><a ng-href="#!/admin/portfolio/{{portfolio.id}}">{{portfolio.title}}</a></td>
-                <td><a ng-href="#!/admin/portfolio/{{portfolio.id}}">{{portfolio.slug}}</a></td>
+                <td><a ng-href="./admin/portfolio/{{portfolio.id}}">{{portfolio.title}}</a></td>
+                <td><a ng-href="./admin/portfolio/{{portfolio.id}}">{{portfolio.slug}}</a></td>
+                <td class="text-center">
+                  <div ng-switch on="portfolio.type">
+                    <span ng-switch-when="0">Ambos</span>
+                    <span ng-switch-when="1">Video</span>
+                    <span ng-switch-when="2">Diseño</span>
+                  </div>
+                </td>
                 <td>{{portfolio.subtitle}}</td>
                 <td>{{portfolio.date | date:'dd-MM-yyyy'}}</td>
                 <td class="text-center">
@@ -36,7 +44,7 @@
       <div class="col-md-12">
         <h3 class="pull-left">Blogs</h3>
         <button type="button" class="btn btn-sm btn-success pull-right">
-          <a ng-href="#!/admin/blog/new">Crear</a>
+          <a ng-href="./admin/blog/new">Crear</a>
         </button>
         <div class="table-container">
           <table class="table table-condensed" id="blogTable">
@@ -49,8 +57,8 @@
             </thead>
             <tbody ui-sortable="vm.sortBlogOptions" ng-model="vm.blogs">
               <tr ng-repeat="blog in vm.blogs track by $index">
-                <td><a ng-href="#!/admin/blog/{{blog.id}}">{{blog.title}}</a></td>
-                <td><a ng-href="#!/admin/blog/{{blog.id}}">{{blog.slug}}</a></td>
+                <td><a ng-href="./admin/blog/{{blog.id}}">{{blog.title}}</a></td>
+                <td><a ng-href="./admin/blog/{{blog.id}}">{{blog.slug}}</a></td>
                 <td>{{blog.subtitle}}</td>
                 <td>{{blog.date | date:'dd-MM-yyyy'}}</td>
                 <td class="text-center">

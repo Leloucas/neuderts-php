@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="shortcut icon" type="image/png" href="assets/img/neuderts-favicon.png"/>
-
+    <base href="/neuderts/">
 
 
     <title>Neuderts</title>
@@ -33,15 +33,15 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" ng-href="#!/"><img src="assets/img/neuderts-logo.png" alt="Neuderts" class="img-responsive"></a>
+            <a class="navbar-brand" ng-href="./"><img src="assets/img/neuderts-logo.png" alt="Neuderts" class="img-responsive"></a>
           </div>
         </div>
         <div class="collapse navbar-collapse" id="neuNavCollapse">
           <div class="navbar-right">
             <ul class="nav navbar-nav navbar-right">
-              <li><a ng-href="#!/video">Video</a></li>
-              <li><a ng-href="#!/diseño">Diseño</a></li>
-              <li><a ng-href="#!/contacto">Contacto</a></li>
+              <li><a ng-href="./video">Video</a></li>
+              <li><a ng-href="./diseño">Diseño</a></li>
+              <li><a ng-href="./contacto">Contacto</a></li>
               <li><a href="https://www.instagram.com/neudertsmx" target="_blank">Instagram</a></li>
               <li><a href="https://www.facebook.com/neuderts" target="_blank">Facebook</a></li>
               <li><a href="https://vimeo.com/neuderts" target="_blank">Vimeo</a></li>
@@ -86,6 +86,8 @@
     <script src="assets/angular/auth/login.controller.js" charset="utf-8"></script>
     <script src="assets/angular/contacto/contacto.controller.js" charset="utf-8"></script>
     <script src="assets/angular/portfolio/portfolio.controller.js" charset="utf-8"></script>
+    <script src="assets/angular/branding/branding.controller.js" charset="utf-8"></script>
+    <script src="assets/angular/video/video.controller.js" charset="utf-8"></script>
     <script src="assets/angular/admin/home.controller.js" charset="utf-8"></script>
     <script src="assets/angular/admin/blog/editBlog.controller.js" charset="utf-8"></script>
     <script src="assets/angular/admin/blog/newBlog.controller.js" charset="utf-8"></script>
