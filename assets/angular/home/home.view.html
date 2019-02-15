@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-3 col-sm-12 col-xs-12" ng-repeat="portfolio in vm.portfolios ">
     <div class="item-container">
-      <a ng-href="#!/portfolio/{{ portfolio.slug }}">
+      <a ng-href="./portfolio/{{ portfolio.slug }}">
         <img ng-src="public/assets/img/portfolio/{{ portfolio.img }}" alt="{{ portfolio.title }}" title="{{ portfolio.title }}" class="img-responsive item" ng-if="portfolio.img"/>
         <img ng-src="assets/img/neuderts-favicon.png" alt="{{ portfolio.title }}" title="{{ portfolio.title }}" class="img-responsive item" ng-if="!portfolio.img"/>
       </a>

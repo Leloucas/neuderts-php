@@ -25,18 +25,4 @@ function portfolioCtrl($location, $routeParams, $sce, neuData, $window){
       console.log(error);
   });
 
-  // vm.portfolio = {
-  //   title : "Summernote",
-  //   slug : $routeParams.slug,
-  //   subtitle : "Test del summernote",
-  //   img : '000_ElShowDeKarl.png',
-  //   date : '18-12-2018',
-  //   body : '<h1> HEY PAISANOS </h1><br><p>Its the super mario brothers super show</p>'
-  // };
-
-
-
-  console.log($routeParams.slug);
-
-
 }

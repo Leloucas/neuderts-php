@@ -24,6 +24,7 @@
     if($dbh){
       $title = $data['portfolio']['title'];
       $slug = $data['portfolio']['slug'];
+      $type = $data['portfolio']['type'];
       $subtitle = $data['portfolio']['subtitle'];
       $body = $data['portfolio']['body'];
 
@@ -51,12 +52,13 @@
 
         }
 
-        $sql = "INSERT INTO portfolio (title, slug, subtitle, body";
-        $sql2 = ") VALUES (:title, :slug, :subtitle, :body";
+        $sql = "INSERT INTO portfolio (title, slug, type, subtitle, body";
+        $sql2 = ") VALUES (:title, :slug, :type, :subtitle, :body";
 
         $vars = array(
           'title' => $title,
           'slug' => $slug,
+          'type' => $type,
           'subtitle' => $subtitle,
           'body' => $body,
         );

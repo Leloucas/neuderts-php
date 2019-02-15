@@ -32,6 +32,19 @@ function newPortCtrl($location, neuData, $window){
 
   vm.portfolio = {};
 
+  vm.processSlug = function(slugTitle){
+    if(slugTitle){
+      vm.portfolio.slug = slugTitle.toLowerCase().trim()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/&/g, '-y-')
+        .replace(/[\s\W-]+/g, '-');
+    } else {
+      vm.portfolio.slug = '';
+    }
+    return;
+  }
+
   vm.submitForm = function(){
     vm.loading = true;
     vm.exists = false;

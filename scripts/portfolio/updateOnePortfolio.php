@@ -23,6 +23,7 @@
     if($dbh){
       $id = $data['portfolio']['id'];
       $title = $data['portfolio']['title'];
+      $type = $data['portfolio']['type'];
       $slug = $data['portfolio']['slug'];
       $subtitle = $data['portfolio']['subtitle'];
       $body = $data['portfolio']['body'];
@@ -51,11 +52,12 @@
 
         }
 
-        $sql = "UPDATE portfolio SET title = :title, slug = :slug, subtitle = :subtitle, body = :body";
+        $sql = "UPDATE portfolio SET title = :title, type = :type, slug = :slug, subtitle = :subtitle, body = :body";
 
         $vars = array(
           'id' => $id,
           'title' => $title,
+          'type' => $type,
           'slug' => $slug,
           'subtitle' => $subtitle,
           'body' => $body,

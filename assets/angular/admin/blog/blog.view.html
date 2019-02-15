@@ -6,7 +6,7 @@
       <div class="form-group">
         <label class="control-label col-sm-2" for="">Título:</label>
         <div class="col-sm-10 col-md-10">
-          <input class="form-control" type="text" name="title" id="title" ng-model="vm.blog.title" ng-required="true">
+          <input class="form-control" type="text" name="title" id="title" ng-model="vm.blog.title" ng-required="true" ng-change="vm.processSlug(vm.blog.title)">
           <p ng-show="blogForm.title.$invalid && blogForm.title.$touched"><small>Este campo es obligatorio</small></p>
         </div>
       </div>

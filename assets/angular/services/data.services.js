@@ -37,7 +37,7 @@ function neuData($http, $window, Upload){
       file: img,
       data: {
         portfolio: data,
-        targetPath: './public/assets/img/portfolio/'
+        targetPath: _documentRoot + '/public/assets/img/portfolio/'
       }
     };
 
@@ -52,7 +52,7 @@ function neuData($http, $window, Upload){
       file: img,
       data: {
         blog: data,
-        targetPath: './public/assets/img/blog/'
+        targetPath: _documentRoot + '/public/assets/img/blog/'
       }
     };
 
