@@ -70,7 +70,7 @@
             <span class="pull-left text-left footer-contacto">
               &copy; Neuderts 2018 Todos los Derechos Reservados.
             </span>
-            <span class="pull-right text-right footer-contacto"><a href="#!/contacto">Contacto</a></span>
+            <span class="pull-right text-right footer-contacto"><a ng-href="./contacto">Contacto</a></span>
           </p>
         </div>
       </div>
