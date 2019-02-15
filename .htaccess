@@ -1,7 +1,7 @@
 RewriteEngine On 
 Options FollowSymLinks
 
-RewriteBase /neuderts/
+RewriteBase /
 
 # Don't rewrite files or directories
 RewriteCond %{REQUEST_FILENAME} -f [OR]

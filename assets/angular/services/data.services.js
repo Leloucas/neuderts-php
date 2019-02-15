@@ -3,7 +3,7 @@ angular.module('neuderts').service('neuData', neuData);
 neuData.$inject = ['$http', '$window', 'Upload'];
 
 function neuData($http, $window, Upload){
-  const _documentRoot = '/neuderts';
+  const _documentRoot = '';
 
   function getAllPortfolio(type = 0){
     return $http.get('./scripts/portfolio/getAllPortfolio.php?type='+type).then(complete).catch(failed);

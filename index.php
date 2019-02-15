@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="shortcut icon" type="image/png" href="assets/img/neuderts-favicon.png"/>
-    <base href="/neuderts/">
+    <base href="/">
 
 
     <title>Neuderts</title>

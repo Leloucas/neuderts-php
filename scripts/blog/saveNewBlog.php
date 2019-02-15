@@ -44,7 +44,7 @@
           if(substr($img, 0, 10) === 'data:image'){
             $data = explode( ',', $img );
             $image = base64_decode($data[1]);
-            $file = '/neuderts/public/assets/img/blog/' . $bodyImg;
+            $file = '/public/assets/img/blog/' . $bodyImg;
             file_put_contents($_SERVER['DOCUMENT_ROOT'].$file, $image);
             $body = str_replace($img, $file, $body);
           }
