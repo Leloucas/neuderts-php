@@ -12,9 +12,9 @@ $whereType = '';
 if(isset($_GET['type']) && $_GET['type']){
   $type = preg_replace('/[^-a-zA-Z0-9_]/', '', $_GET['type']);
   if($type == 1){
-    $whereType = ' AND type = 1 ';
+    $whereType = ' AND type IN (0,1) ';
   } else if ($type == 2){
-    $whereType = ' AND type = 2 ';
+    $whereType = ' AND type IN (0,2) ';
   }
 }
 
